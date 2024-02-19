@@ -81,6 +81,7 @@ RUN set -eux; \
 		--disable-install-doc \
 		--enable-shared \
 		${rustArch:+--enable-yjit} \
+		ASFLAGS=-mbranch-protection=pac-ret \  
 	; \
 	make -j "$(nproc)"; \
 	make install; \
